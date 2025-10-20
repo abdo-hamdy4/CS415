@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- 1. Project Identification -->
+    <!-- Replace these with your own project details -->
+    <groupId>com.example.myapp</groupId>
+    <artifactId>my-java-app</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <!-- 2. Project Properties -->
+    <!-- Defines settings used throughout the POM, like Java version and encoding -->
+    <properties>
+        <!-- The version of Java your project uses -->
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <!-- Ensures your project handles characters correctly -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <!-- 3. Project Dependencies -->
+    <!-- Lists all external libraries your project needs -->
+    <dependencies>
+        <!-- JUnit 5 - The modern testing framework for Java -->
+        <!-- This dependency is only needed for running tests, so its scope is "test" -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.10.2</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <!-- 4. Build Configuration -->
+    <!-- Configures how Maven builds and packages the project -->
+    <build>
+        <plugins>
+            <!-- Maven Surefire Plugin -->
+            <!-- This plugin is responsible for running the unit tests -->
+            <!-- Without it, `mvn test` will not execute your JUnit tests -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.2.5</version>
+            </plugin>
+
+            <!-- Maven Compiler Plugin -->
+            <!-- Ensures the project is compiled with the correct Java version -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
